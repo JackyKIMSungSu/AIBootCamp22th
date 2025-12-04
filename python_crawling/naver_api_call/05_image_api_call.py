@@ -37,7 +37,7 @@ class NaverSearchApi():
             print(f"{i + 1}번 반복 합니다. start={start}")
             r = self.call_api(keyword, start, display=display)
             print(r['items'][0])
-            result.append(r['items'])
+            result += r['items']
         return result
 
     def blog(self, keyword, quantity=100):
