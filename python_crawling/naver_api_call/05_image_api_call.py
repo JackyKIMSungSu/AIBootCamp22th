@@ -79,7 +79,7 @@ class NaverSearchApi():
 if __name__ == '__main__':
     naver_search_api = NaverSearchApi()
     keyword = "헬스장"
-    r = naver_search_api.image(keyword, 200)
+    r = naver_search_api.image(keyword, 10)
     # print(r)
     print(r)
     naver_search_api.save_images(keyword, r)
