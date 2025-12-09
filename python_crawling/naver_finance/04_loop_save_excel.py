@@ -1,3 +1,4 @@
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
@@ -24,5 +25,12 @@ def crawl(code):
     return dic
 
 if __name__ == '__main__':
-    dic = crawl("005930")
-    print(dic)
+    codes = ["035720", "005930", "051910", "000660"]
+    r = []
+    for code in codes:
+        dic = crawl(code)
+        r.append(dic)
+    print(r)
+
+    df = pd.DataFrame(r)
+    df.to_excel("prices.xlsx", index=False)
